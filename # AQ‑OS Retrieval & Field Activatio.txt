@@ -1,0 +1,244 @@
+# AQ‑OS Retrieval & Field Activation
+
+**Version:** v1.0 (Foundational)
+
+**Status:** Stable architectural primitive
+
+**Purpose:**
+Define the AQ‑OS–native mechanism for knowledge access, replacing flat Retrieval‑Augmented Generation (RAG) with *field activation, constraint, and verification*. This document is intended to be directly embeddable in AQ‑OS technical documentation.
+
+---
+
+## 1. Design Premise
+
+AQ‑OS does **not** retrieve information from a global corpus.
+
+AQ‑OS **activates bounded regions of meaning** (Q‑Fields), within which limited retrieval operations may occur.
+
+> Retrieval is a *local operation inside an activated field*, never a global search.
+
+This design prevents semantic collapse, authority inflation, and context blending at scale.
+
+---
+
+## 2. Core Primitives (Canonical)
+
+### 2.1 Q‑Seed
+
+**Definition:** Atomic signal unit
+
+Examples:
+
+* Fact
+* Measurement
+* Paragraph
+* Claim
+* Observation
+
+**Required metadata:**
+
+* Provenance
+* Scope
+* Confidence
+* Timestamp / validity window (optional)
+
+Q‑Seeds carry *signal*, not truth.
+
+---
+
+### 2.2 Q‑Line
+
+**Definition:** Coherent linkage of Q‑Seeds
+
+Examples:
+
+* Causal chain
+* Argument
+* Narrative thread
+* Procedure
+* Temporal sequence
+
+Q‑Lines provide *structure* but do not assert authority.
+
+---
+
+### 2.3 Q‑Field
+
+**Definition:** Activated semantic region
+
+A Q‑Field defines:
+
+* Domain
+* Mode
+* Scope
+* Allowed operations
+* Exclusions
+
+Inactive fields are **not searched, ranked, or compared**.
+
+---
+
+## 3. AQ‑OS Retrieval Cycle (Native)
+
+This cycle replaces conventional RAG pipelines.
+
+---
+
+### Step 0 — Signal Intake
+
+**Input:** User query or system prompt
+
+**Operation:**
+
+* Classify signal by:
+
+  * Intent (explore / explain / decide / create)
+  * Risk level
+  * Mode (technical / narrative / diagnostic / speculative)
+
+**Output:** Typed signal descriptor
+
+*No knowledge access occurs at this stage.*
+
+---
+
+### Step 1 — Q‑Field Activation (Routing)
+
+**Operation:**
+
+* Determine which Q‑Fields are eligible to respond
+* Explicitly deactivate all non‑eligible fields
+
+**Output:** Active Q‑Field set
+
+> This step replaces corpus‑wide search.
+
+---
+
+### Step 2 — Field Compression (Hierarchy)
+
+**Operation:**
+
+* Summarize high‑level structure within the active Q‑Field
+* Collapse irrelevant branches
+* Prune incompatible Q‑Lines
+
+**Properties:**
+
+* Lossy by design
+* Occurs *before* similarity operations
+
+**Output:** Compressed Q‑Field
+
+---
+
+### Step 3 — Local Relevance Resolution
+
+**Operation:**
+
+* Apply embeddings, similarity metrics, or pattern matching
+* Only within the compressed Q‑Field
+* Using operator‑specific distance rules
+
+**Constraints:**
+
+* No global similarity
+* No cross‑field comparison
+
+**Output:** Candidate Q‑Seed / Q‑Line set
+
+---
+
+### Step 4 — Context Assembly
+
+**Operation:**
+
+* Assemble candidates into a temporary active context field
+* Preserve provenance, confidence, and role
+
+**Rule:**
+No Q‑Seed is treated as truth; all are inputs.
+
+---
+
+### Step 5 — Operator‑Constrained Generation
+
+**Operation:**
+
+* Execute generation under the active operator
+* Bound output to the active Q‑Field
+
+**Prevents:**
+
+* Context blending
+* Authority inflation
+* Cross‑domain leakage
+
+---
+
+### Step 6 — SAFE Verification Loop
+
+**Operation:**
+
+* Check internal consistency
+* Detect conflicts
+* Bound confidence
+
+**Failure modes:**
+
+* Degraded output
+* Explicit uncertainty
+* Field collapse
+
+*No output exits AQ‑OS without passing SAFE.*
+
+---
+
+## 4. Mapping: Hierarchical RAG → AQ‑OS
+
+| Hierarchical RAG Concept | AQ‑OS Primitive    |
+| ------------------------ | ------------------ |
+| Corpus                   | Latent field space |
+| Encyclopedia             | Q‑Field            |
+| Chapter                  | Sub‑field          |
+| Section                  | Compressed region  |
+| Paragraph                | Q‑Seed             |
+| Hop                      | Field transition   |
+| Summarization            | Field compression  |
+| Retrieval                | Local activation   |
+
+---
+
+## 5. Architectural Assertion (Normative)
+
+> AQ‑OS does not scale knowledge by expanding retrieval.
+> AQ‑OS scales knowledge by **restricting eligibility**.
+
+Similarity is a local tool, not a governing principle.
+
+---
+
+## 6. Non‑Goals
+
+AQ‑OS explicitly rejects:
+
+* Global semantic similarity
+* Flat embedding search as primary retrieval
+* Unbounded context injection
+* Authority by volume
+
+---
+
+## 7. Status
+
+This spec defines a **first‑class AQ‑OS subsystem**.
+
+Future extensions may define:
+
+* Operator‑specific distance functions
+* Adaptive field compression thresholds
+* Cross‑field arbitration protocols
+
+---
+
+**End of Spec Block**

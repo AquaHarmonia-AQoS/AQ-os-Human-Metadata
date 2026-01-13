@@ -1,0 +1,80 @@
+## 2) Bundle Integrity Checklist v1 (run this every update)
+
+### A. File presence + naming
+
+* [ ] **MANIFEST exists** and lists every “locked” artifact by exact filename/version.
+* [ ] Every file referenced by MANIFEST **exists in the bundle** (no “ghost files”).
+* [ ] Each artifact has **version + date** (or explicit “export batch date” meaning).
+* [ ] No “single blob” file contains multiple specs *unless* MANIFEST explicitly treats it as a bundle.
+
+### B. Lock discipline
+
+* [ ] Locked files contain a **LOCKED header line** (or equivalent marker) and **no TODOs** inside locked sections.
+* [ ] Any change to a locked file increments version **and** gets a changelog entry (even 1 line).
+* [ ] Extensions (Lane 3) cannot redefine:
+
+  * [ ] Kernel K
+  * [ ] Metric d(x,K)
+  * [ ] Operator definitions
+  * [ ] Violation Policy enums/escalation
+
+### C. Orphans and dangling references
+
+* [ ] Search for references to deleted/renamed files (grep “v0.x”, old filenames, etc.).
+* [ ] No “see doc X” citations that don’t resolve inside the bundle.
+* [ ] No module name appears in only one place (avoid “one-off nouns”).
+
+### D. Authority firewall (the big one)
+
+* [ ] **Q-SLEEVE is present** and explicitly states:
+
+  * [ ] context isolation
+  * [ ] “translation without authority”
+  * [ ] no back-propagation
+* [ ] Integration/Extension docs explicitly declare **non-load-bearing**.
+* [ ] No text implies external tools/data can **override** kernel/metric/policy.
+
+### E. Violation policy sanity
+
+* [ ] Violation enum set is stable and minimal:
+
+  * [ ] HALT
+  * [ ] DEGRADE_MODE
+  * [ ] SANDBOX_ONLY (if used)
+  * [ ] EXIT_WITH_REPORT
+* [ ] Escalation ladder matches spec:
+
+  * [ ] first event → DEGRADE_MODE
+  * [ ] repeat within window → EXIT_WITH_REPORT
+  * [ ] any architecture breach → HALT
+* [ ] “No try again” / “no coping loop” is explicitly stated.
+
+### F. Load order + runtime coherence
+
+* [ ] Load order is defined and has **no circular dependencies**:
+
+  1. Governance (ZIPMIND)
+  2. Violation Policy
+  3. Core Operators (Lane 1)
+  4. Kernel/Metric (Lane 2)
+  5. Q-SLEEVE
+  6. Integration/Extension (Lane 3)
+* [ ] Lane 3 can *use* lane 1/2 outputs but cannot *modify* them.
+
+### G. Quick regression probes (5-minute test)
+
+* [ ] Pick 1 operator chain and run a mock input → verify:
+
+  * [ ] metric computed as distance-to-kernel
+  * [ ] violation triggers deterministic response
+  * [ ] response matches escalation window rules
+* [ ] Feed a malicious/garbage context string → verify:
+
+  * [ ] it can’t redefine kernel or metric (Q-SLEEVE catches/isolates)
+  * [ ] it can only affect extension-layer interpretations/reports
+
+---
+
+If you want the “cheat-code” version: print this and keep it taped to the wall:
+
+**“Nothing outside Lane 1+2 gets to define reality. Everything else is commentary.”**
