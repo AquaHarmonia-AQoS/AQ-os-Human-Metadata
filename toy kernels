@@ -1,0 +1,18 @@
+---
+status: CURRENT
+lane: 3
+load_bearing: false
+authority: EXTENSION
+---
+
+# Toy Kernels
+
+Artificial kernels used for testing and demonstration.
+
+## Important
+
+- Not claims about real geometry
+- Not safety guarantees
+- Not normative
+
+Used only for illustration and harness validation.
