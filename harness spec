@@ -1,0 +1,24 @@
+---
+status: CURRENT
+lane: 3
+load_bearing: false
+authority: EXTENSION
+---
+
+# Harness Specification
+
+This document defines empirical testing harnesses.
+
+## Properties
+
+- Conservative
+- Revocable
+- Domain-limited
+
+## Constraints
+
+- Cannot redefine kernels
+- Cannot alter operator semantics
+- Cannot assert guarantees
+
+(Content evolves here.)
