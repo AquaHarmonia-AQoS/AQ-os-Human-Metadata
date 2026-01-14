@@ -1,0 +1,23 @@
+---
+status: LOCKED
+lane: 2
+load_bearing: true
+authority: CORE
+---
+
+# Lane 2 — Viability Kernels & Geometry
+
+This document defines what constitutes a safe state.
+
+## Core Definitions
+
+- Kernel K as a set
+- Viability metric: distance-to-kernel
+
+## Explicit Bans
+
+- Kernel center semantics
+- Optimization framing
+- Goal interpretation
+
+(Content lives here.)
