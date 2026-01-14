@@ -1,0 +1,11 @@
+# Bundle Integrity Checklist
+
+This checklist must be run before:
+- releases
+- public citations
+- major refactors
+- cross-system exports
+
+Failure to pass this checklist invalidates the bundle.
+
+(See MANIFEST for authority rules.)
