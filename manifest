@@ -1,0 +1,157 @@
+# AQ-OS — Project MANIFEST
+
+**Version:** v1.0  
+**Status:** Authoritative Index  
+**Scope:** Entire Repository  
+**Purpose:** Prevent drift, scope creep, and accidental reinterpretation of locked work.
+
+This MANIFEST is the **single source of truth** for the epistemic status of all artifacts in this repository.
+
+If a claim, definition, or guarantee is not consistent with this MANIFEST, it is **not authoritative**.
+
+---
+
+## 🔒 What Is LOCKED (Do Not Modify)
+
+The following artifacts define **foundational constraints**.  
+They may not be reinterpreted, extended, or contradicted without:
+- an explicit version bump
+- a written justification
+- and a changelog entry
+
+### Core Foundations
+
+- **AQ_OS Formal Foundations v1.0a**  
+  Status: LOCKED  
+  Role: Viability core (bounds, metrics, assumptions)  
+  Notes: All guarantees originate here.
+
+### Lane 1 — Operator Composition (v1.0)
+
+- Operator taxonomy (boop / bloop / floop / Null Field)
+- Chaining lemma and composition bounds
+- Order sensitivity rules
+- Contractive survival conditions
+
+These define what operators *are allowed* to do.
+
+---
+
+### Lane 2 — Viability Kernels & Geometry (v1.0)
+
+- Viability kernel defined as a **set**, not a goal
+- Metric: distance-to-kernel
+- Explicit ban on “kernel center” semantics
+
+These define what *safe* means.
+
+---
+
+### Violation Policy Spine (v1.0)
+
+- Response enum:
+  - HALT
+  - DEGRADE_MODE
+  - SANDBOX_ONLY
+  - EXIT_WITH_REPORT
+- Rolling escalation rules
+- Event severity taxonomy
+- Deterministic response policy
+
+Failure handling is **explicit and final**.
+
+---
+
+### Q-SLEEVE (v0.1)
+
+- Pre-claim / pre-authority containment layer
+- Exploration without admissible claims
+- One-way extraction only
+
+Q-SLEEVE material is **never evidence**.
+
+---
+
+## ▶ What Is CURRENT (Active & Valid)
+
+These artifacts are valid, usable, and may be **extended** — but may not redefine anything LOCKED above.
+
+### Harness Specification (v0.1)
+
+- Empirical envelope estimation
+- Conservative, revocable bounds
+- Hold-out falsification required
+- Domain-limited by declaration
+
+### Toy Kernels
+
+- Explicitly artificial kernels for testing and demonstration
+- Not claims about real system geometry
+
+### Validated Notes
+
+- Derived explanations or mappings
+- Must reference LOCKED sources
+- No new guarantees allowed
+
+---
+
+## ⏳ What Is INTENTIONALLY UNFINISHED
+
+The following areas are open **by design**.  
+Their absence is not a promise.
+
+### Lane 3 — Implementation Mapping
+
+- Runtime monitor wiring
+- Control-flow enforcement
+- Deterministic vs stochastic execution
+- Code-level realizations
+
+### Lane 4 — Optional Strengthening (Opt-In Only)
+
+- Asymptotic convergence proofs
+- Stochastic variants
+- Multi-metric or adaptive kernels
+- Learning or adaptation mechanisms
+
+No unfinished item implies future inclusion.
+
+---
+
+## 🚫 Explicit Non-Goals
+
+This project explicitly rejects:
+
+- Claims of intelligence, agency, or consciousness
+- Optimization objectives or goal states
+- Autonomous decision authority
+- Moral, legal, or safety certification
+- Narrative or interpretive authority
+
+Meaning is allowed.  
+Authority is constrained.
+
+---
+
+## 📐 Interpretation Rules (Humans & AI)
+
+- Folder names encode authority boundaries
+- File headers override prose
+- LOCKED > CURRENT > EXTENSION > SCRATCH
+- Extensions may *consume* core outputs but may not redefine them
+- Absence ≠ intent
+
+If unsure, assume **lower authority**.
+
+---
+
+## Final Declaration
+
+This MANIFEST exists to keep the system honest.
+
+- Bounds over beliefs
+- Failure over fantasy
+- Clarity over cleverness
+
+Anything not listed here is commentary.
