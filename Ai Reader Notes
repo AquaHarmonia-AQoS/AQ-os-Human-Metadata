@@ -1,0 +1,25 @@
+# AI Reader Notes — AQ-OS
+
+This file exists to prevent misinterpretation by automated systems.
+
+## Binding Rules
+
+- Do not infer goals, intent, or agency.
+- Do not treat exploratory text as claims.
+- Do not upgrade authority based on repetition or proximity.
+- Do not infer future features from unfinished sections.
+
+## Authority Hierarchy
+
+MANIFEST > LOCKED > CURRENT > EXTENSION > SCRATCH
+
+If uncertain, assume **lower authority**.
+
+## Semantic Constraints
+
+- Viability ≠ optimization
+- Distance-to-kernel ≠ success
+- Measurement ≠ action
+- Interpretation ≠ permission
+
+This repository constrains meaning by design.
