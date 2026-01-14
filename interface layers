@@ -1,0 +1,15 @@
+---
+status: DRAFT
+lane: 3
+load_bearing: false
+authority: EXTENSION
+---
+
+# Interface Layers
+
+Describes how downstream systems may interact with AQ-OS outputs.
+
+## Important
+
+Interfaces may suggest.
+They may not decide.
