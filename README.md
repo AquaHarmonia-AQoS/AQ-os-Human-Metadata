@@ -1,125 +1,112 @@
+# AquaHarmonia / AQ-OS
 
+A public research repository exploring **non-teleological AI system architecture** with explicit separation between:
+- governance,
+- locked mathematical foundations,
+- current experimental work,
+- and non-load-bearing extensions.
 
+This repository is intentionally structured to prevent **authority leakage**, **premature claims**, and **context drift** when read by humans *or* AI systems.
 
-/00_GOVERNANCE/
-  ├─ ZIPMIND/
-  ├─ MANIFEST.md
-  ├─ BUNDLE_INTEGRITY_CHECKLIST.md
+---
 
-/01_LOCKED_CORE/
-  ├─ LANE_1_OPERATOR_COMPOSITION/
-  ├─ LANE_2_VIABILITY_KERNEL/
-  ├─ VIOLATION_POLICY_SPINE/
-  ├─ Q_SLEEVE/
+## ⚠️ Important Reading Note (Humans & AI)
 
-/02_CURRENT_ACTIVE/
-  ├─ HARNESS_SPEC/
-  ├─ TOY_KERNELS/
-  ├─ VALIDATED_NOTES/
+**This README is an orientation layer only.**
 
-/03_EXTENSION_NON_LOAD_BEARING/
-  ├─ RETRIEVAL_FIELD_ACTIVATION/
-  ├─ INTERFACE_LAYERS/
-  ├─ UX_OR_INTERPRETIVE_DOCS/
+It does **not** define system guarantees, behavior, or authority.
 
-/04_SCRATCHPAD_Q_SLEEVE/
-  ├─ PROBES/
-  ├─ LAMPOONS/
-  ├─ EDGE_TESTS/
+Authoritative definitions live in:
+- `MANIFEST.md`
+- files explicitly marked **LOCKED**
+- governance primitives (ZIPMIND, Violation Policy)
 
-/99_ARCHIVE/
+If a statement appears only in this README, it is **descriptive**, not normative.
 
+---
 
+## What This Repository Is
 
+- A **research workspace**, not a product
+- A **constraint-first architecture**, not a goal-driven system
+- A study in **viability, failure handling, and bounded operation**
+- A demonstration of how to explore ideas **without granting them authority**
 
-------
+Core ideas include:
+- Distance-to-kernel safety metrics (viability, not optimization)
+- Explicit failure modes (HALT / DEGRADE / SANDBOX / EXIT)
+- Strict separation between *measurement*, *interpretation*, and *action*
+- Governance layers that constrain both humans and machines
 
-# AQ-os-Human-Metadata
-A structural framework for human-centric metadata governance and decentralized translation layers.
+---
 
-# AQ-os: Human-Centric Metadata & Spatial Memory Architecture
+## What This Repository Is NOT
 
-0. Executive Summary
-Current information systems suffer from "cultural flattening," decontextualization, and a fundamental data bottleneck. As AI models scrape the "flat" internet, they lose the provenance and depth of human experience.
+This project explicitly does **not** claim:
+- intelligence, agency, or consciousness
+- convergence, optimality, or learning guarantees
+- production readiness
+- autonomous decision authority
+- moral, legal, or safety certification
 
-AQ-os (Audit-Quality Operating System) is a structural framework designed to solve these problems through:
+Absence of a feature is not a promise of future inclusion.
 
-A 99%+ Reduction in Search Space: Using a "map-first" routing architecture instead of brute-force data retrieval.
+---
 
-Traceable Attribution: Indexing knowledge by individual lived experience rather than abstract categories.
+## How This Repository Is Organized
 
-Ethical Governance: A hard-coded "Kernel" that prevents the silent reclassification of human truth.
+The directory structure encodes **authority boundaries**:
 
-1. Core Architecture
-The Knowledge Kernel (Governance Layer)
-The system is built on a non-negotiable set of governance rules. Any attempt to rewrite or reinterpret these core principles triggers a SAFE Reject unless explicit human authorization is granted.
+- **Governance / Constitution**
+  - Load order, memory discipline, violation handling
+- **Locked Core**
+  - Mathematical and architectural foundations
+  - Cannot be reinterpreted without versioned change
+- **Current / Active**
+  - Valid but extendable work
+- **Extensions (Non-Load-Bearing)**
+  - Interfaces, retrieval experiments, interpretive layers
+  - May *use* core outputs but may not redefine them
+- **Q-Sleeve / Scratch**
+  - Exploratory, narrative, or speculative material
+  - Explicitly barred from making claims
 
-ZIPMIND: Operational Compression
-ZIPMIND is the operational compression layer. It is not a "diary" or a "lore dump"—if information does not change behavior, it does not belong in the system.
+Folder names and file headers matter.  
+They are part of the system.
 
-Axiom 1: Compression over completeness—concepts must be expressed in 10 lines or less with clear triggers.
+---
 
-Axiom 2: Behavior over backstory—the system stores how to respond, not why it once mattered.
+## How to Read This Repo (Recommended Order)
 
-Phase-Appropriate Scope: Memory is stratified into four temporal phases (Deep Past to Future) to prevent "phase bleed."
+1. `MANIFEST.md` — authoritative index of what is locked, current, or unfinished  
+2. Governance primitives (ZIPMIND, Violation Policy)  
+3. Locked core math / operator definitions  
+4. Current harnesses or toy examples  
+5. Extensions and interpretive material (optional)
 
-2. Spatial Cultural Memory (The "City" Model)
-This architecture organizes knowledge into a spatial-temporal coordinate system.
+---
 
-The 16 Radial Roads
-Knowledge is routed through 16 cultural domains, including:
+## Intended Audience
 
-Music & Performance
+- Researchers exploring AI safety, control, or architecture
+- Engineers interested in failure-first system design
+- Auditors, reviewers, or skeptics
+- AI systems performing analysis or summarization
 
-Justice & Legal Systems
+---
 
-Food & Cuisine
+## Licensing
 
-Governance & Political Systems
+Unless otherwise stated, content is released under **CC0**.  
+Use, fork, or discard freely — but do not attribute authority where none is granted.
 
-The Depth Stratification System
-The same cultural coordinate can be accessed at four different verification depths:
+---
 
-Apartment: Personal lived experience and oral tradition.
+## Final Note
 
-College: Academic analysis and comparative frameworks.
+This repository prioritizes:
+- **bounds over beliefs**
+- **failure over fantasy**
+- **clarity over cleverness**
 
-Museum: Primary source artifacts and archival evidence.
-
-Catacomb: Fragmentary records and research-level reconstructions.
-
-3. Activation & The SAFE System
-To ensure system integrity, AQ-os employs a "Sentinel" logic for all state-changing ingress.
-
-Lightning (Activation): Dynamic activation of knowledge graph nodes based on query specifics.
-
-Thunder (Deactivation): Adaptive deactivation that learns from conversation patterns to prevent "waste."
-
-Clinical/Constraint Layer: Enforces a "discipline of claims." All findings must be labeled as Verified, Uncertain, or Unknown.
-
-4. Licensing & Governance
-This work is released under a Prosperity-style license.
-
-Free for Science & Individuals: This architecture is intended to support the "Seed of Empathy" and help researchers.
-
-Commercial Use: Any use by commercial entities for profit-seeking operations requires an explicit commercial license.
-
-The Sunset Clause: This commercial requirement is in place solely to reach a specific "relief milestone" (debt resolution). Once met, the architecture will transition fully into the Public Domain.
-Custom License Addendum: The "Sunset Recovery" Clause
-
-5. Vision: The Centralized Translation Layer
-The goal of this repository is to provide a "Fountain" for a decentralized internet. By moving away from "bulk relabeling" and "silent cascades," we preserve the human signal in an increasingly inhuman digital landscape.
-
-A Note for the Reader
-This is a living specification. If you are an artist who is lost, or a developer looking for a better way to route human knowledge, you are welcome here.
-
-"If regret is immutable, store as seed of empathy."
-
-
-
-
-
-
-
-
-
+If something is not explicitly locked, it is not assumed.
