@@ -1,0 +1,25 @@
+---
+status: LOCKED
+lane: 0
+load_bearing: true
+authority: GOVERNANCE
+---
+
+# Violation Policy Spine
+
+This document defines how the system responds to failure.
+
+## Response Enum
+
+- HALT
+- DEGRADE_MODE
+- SANDBOX_ONLY
+- EXIT_WITH_REPORT
+
+## Rules
+
+- Deterministic
+- No retries
+- No silent recovery
+
+(Content lives here.)
