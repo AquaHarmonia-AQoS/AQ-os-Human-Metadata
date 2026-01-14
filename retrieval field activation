@@ -1,0 +1,18 @@
+---
+status: DRAFT
+lane: 3
+load_bearing: false
+authority: EXTENSION
+---
+
+# Retrieval & Field Activation
+
+Exploratory work on bounded retrieval mechanisms.
+
+## Constraints
+
+- No global search authority
+- No back-propagation
+- No implicit truth assignment
+
+(Content experimental.)
