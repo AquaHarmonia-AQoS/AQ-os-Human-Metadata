@@ -1,3 +1,39 @@
+
+
+
+/00_GOVERNANCE/
+  ├─ ZIPMIND/
+  ├─ MANIFEST.md
+  ├─ BUNDLE_INTEGRITY_CHECKLIST.md
+
+/01_LOCKED_CORE/
+  ├─ LANE_1_OPERATOR_COMPOSITION/
+  ├─ LANE_2_VIABILITY_KERNEL/
+  ├─ VIOLATION_POLICY_SPINE/
+  ├─ Q_SLEEVE/
+
+/02_CURRENT_ACTIVE/
+  ├─ HARNESS_SPEC/
+  ├─ TOY_KERNELS/
+  ├─ VALIDATED_NOTES/
+
+/03_EXTENSION_NON_LOAD_BEARING/
+  ├─ RETRIEVAL_FIELD_ACTIVATION/
+  ├─ INTERFACE_LAYERS/
+  ├─ UX_OR_INTERPRETIVE_DOCS/
+
+/04_SCRATCHPAD_Q_SLEEVE/
+  ├─ PROBES/
+  ├─ LAMPOONS/
+  ├─ EDGE_TESTS/
+
+/99_ARCHIVE/
+
+
+
+
+------
+
 # AQ-os-Human-Metadata
 A structural framework for human-centric metadata governance and decentralized translation layers.
 
