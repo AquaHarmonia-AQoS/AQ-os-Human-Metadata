@@ -1,0 +1,18 @@
+---
+status: CURRENT
+lane: 3
+load_bearing: false
+authority: EXTENSION
+---
+
+# Validated Notes
+
+Derived explanations and mappings.
+
+## Rules
+
+- Must cite LOCKED sources
+- May not introduce new guarantees
+- May not alter definitions
+
+If uncertain, downgrade to SCRATCH.
