@@ -1,0 +1,24 @@
+---
+status: LOCKED
+lane: 1
+load_bearing: true
+authority: CORE
+---
+
+# Lane 1 — Operator Composition
+
+This document defines the allowed operators and composition rules.
+
+## Scope
+
+- Operator taxonomy
+- Composition and chaining rules
+- Bounds and invariants
+
+## Prohibitions
+
+- No reinterpretation without version bump
+- No extension-layer modification
+- No implicit guarantees
+
+(Content lives here.)
