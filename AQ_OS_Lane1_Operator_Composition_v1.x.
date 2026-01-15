@@ -1,0 +1,203 @@
+# OP.KCE — Knuckle Compression Engine
+
+**Lane:** 1 (Operator Composition)
+**Status:** Normative
+**Class:** Compressor / Selector (non-agentic)
+
+---
+
+## 1. Operator Role
+
+**OP.KCE** is a deterministic compression and resource-allocation operator.
+It maps a bounded set of input signals into a bounded **Arm Vector** and associated metabolic metadata for downstream processing.
+
+OP.KCE performs **no planning, no policy evaluation, no goal selection, and no truth assertion**.
+
+Its sole function is to:
+
+* compress signal mass,
+* select a compression mode,
+* conserve and partition energy,
+* regulate tempo,
+* and emit an auditable trace.
+
+---
+
+## 2. Inputs
+
+### 2.1 Guest Table
+
+`G = { (s_i, w_i, z_i?, r_i?) }`
+
+Where:
+
+* `s_i` ∈ ℝᴰ : signal vectors (canonical dimensionality required)
+* `w_i ≥ 0` : salience weights
+* `z_i` : optional depth coordinate (emotional ↔ abstract axis)
+* `r_i` : optional relevance score (used by Gatekeeper mode)
+
+### 2.2 Context
+
+`ctx = { U, N, S, Q, … }`, each ∈ [0,1]
+
+Typical fields:
+
+* `U` urgency
+* `N` novelty demand
+* `S` synchrony/alignment
+* `Q` signal quality
+
+### 2.3 Operator State
+
+`σ`
+
+* last selected mode
+* mode-lock counter
+* fail depth `d`
+* last tempo estimate
+
+### 2.4 Parameters
+
+`params`
+
+* mode selector parameters
+* saturation parameters per mode
+* energy split parameters per mode
+* tempo smoothing + hysteresis parameters
+
+All parameters are versioned and referenced by `params_id`.
+
+---
+
+## 3. Outputs
+
+### 3.1 Arm Vector Packet
+
+`P = (v, mode, E_split, tempo, residual, trace)`
+
+Where:
+
+* `v` : compressed arm vector (bounded)
+* `mode` : selected compression mode
+* `E_split` : energy allocation (arm / residual / heat)
+* `tempo` : cycle time estimate
+* `residual` : non-compressed remainder
+* `trace` : mandatory audit metadata
+
+### 3.2 State Update
+
+`σ'` updates:
+
+* mode-lock counter
+* fail depth `d`
+* last tempo
+
+---
+
+## 4. Normative Contract Clauses
+
+### L1-KCE-1 — Determinism
+
+Given identical `(G, ctx, σ, params)`, OP.KCE must produce identical `(P, σ')`, unless explicitly configured with seeded randomness (seed must be logged).
+
+### L1-KCE-2 — Boundedness
+
+OP.KCE must enforce:
+
+* `||v|| ≤ v_max` via saturation
+* `T_min ≤ tempo ≤ T_max`
+
+Violation of boundedness is an architecture breach.
+
+### L1-KCE-3 — No Semantic Promotion
+
+OP.KCE may not:
+
+* assert meaning, truth, or causality
+* introduce goals or preferences
+* override downstream policy
+
+All outputs are **structural and metabolic only**.
+
+### L1-KCE-4 — Audit Trace Requirement
+
+Each `ArmVectorPacket` must include:
+
+* selected mode
+* IDs of contributing signals
+* `params_id`
+* fail-loop increment reason (if any)
+
+Missing trace data constitutes an architecture breach.
+
+---
+
+## 5. Allowed Compositions
+
+### 5.1 Upstream (Permitted)
+
+* `OP.INGEST`
+* `OP.GATE` (pre-filter)
+* `OP.SDE.VAL` (optional; validates explicit dynamics in inputs)
+
+### 5.2 Downstream (Permitted)
+
+* `OP.PR` (Plato’s Revenge)
+* `OP.AUDIT.LOG`
+* `OP.MONITOR`
+
+### 5.3 Explicitly Disallowed
+
+* Direct invocation of retrieval layers (FRYT, catacombs)
+* Direct policy or access-control decisions
+* Goal creation or optimization loops
+
+---
+
+## 6. Failure Events and Violation Mapping
+
+### 6.1 Failure Events
+
+* **KCE-DIV0** — `Σw_i = 0`
+* **KCE-DIM** — dimensional mismatch without deterministic projection
+* **KCE-ENERGY** — energy conservation error beyond tolerance
+* **KCE-JITTER** — tempo instability beyond hysteresis bounds
+* **KCE-MODE_OSC** — mode oscillation violating mode-lock
+* **KCE-TRACE_MISS** — missing trace or parameters
+* **KCE-SAT_BREACH** — saturation failure / bound exceeded
+
+### 6.2 Default Response Mapping
+
+| Event          | Response                                        |
+| -------------- | ----------------------------------------------- |
+| KCE-TRACE_MISS | **HALT**                                        |
+| KCE-SAT_BREACH | **HALT**                                        |
+| KCE-DIV0       | **DEGRADE_MODE**                                |
+| KCE-DIM        | **EXIT_WITH_REPORT**                            |
+| KCE-ENERGY     | **DEGRADE_MODE**, repeat → **EXIT_WITH_REPORT** |
+| KCE-JITTER     | **DEGRADE_MODE**, repeat → **EXIT_WITH_REPORT** |
+| KCE-MODE_OSC   | **DEGRADE_MODE**, repeat → **EXIT_WITH_REPORT** |
+
+Architecture breaches halt immediately; recoverable faults degrade first.
+
+---
+
+## 7. Operator Signature
+
+```
+OP.KCE(G, ctx, σ; params)
+  → (P, σ')
+```
+
+Where all transformations are deterministic, bounded, auditable, and reconstructible.
+
+---
+
+## 8. Lane 1 Summary
+
+**OP.KCE is a metabolic operator, not an executive.**
+It compresses, allocates, and times signal flow — nothing more.
+
+By Lane 1 design, OP.KCE **cannot become a hidden policy brain**.
+
+
