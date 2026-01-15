@@ -1,0 +1,178 @@
+KCE as an AQ-OS Lane 1 Operator
+1) Operator Identity
+
+Operator ID: OP.KCE
+Class: Compressor / Selector (non-agentic)
+Function: maps a bounded set of input signals into a bounded Arm Vector + trace metadata.
+
+KCE is explicitly not:
+
+a goal chooser
+
+a planner
+
+a policy engine
+
+a truth engine
+
+It’s a resource-allocation + compression mechanism.
+
+2) Inputs / Outputs
+Inputs
+
+GuestTable G = { (s_i, w_i, z_i?, r_i?) }
+
+s_i = signal vector (must be in canonical space D)
+
+w_i = salience weight (≥ 0)
+
+z_i = optional depth (emotional↔abstract axis)
+
+r_i = optional relevance score for Gatekeeper mode
+
+Context ctx
+
+urgency U, novelty demand N, synchrony S, signal quality Q, etc. (bounded [0,1])
+
+State σ
+
+last mode
+
+mode lock counter
+
+fail depth d
+
+last tempo estimate
+
+Outputs
+
+ArmVectorPacket P = (v, mode, E_split, tempo, residual, trace)
+
+v = compressed vector (bounded by saturation rule)
+
+trace = minimal audit hooks (what signals were used, which mode, which params)
+
+Lane 1 rule: output must be mechanically reconstructible from inputs + params. No hidden magic.
+
+3) Lane 1 Contract Clauses
+L1-KCE-1: Deterministic Given Inputs
+
+Given (G, ctx, σ, params) KCE is deterministic (or explicitly stochastic with seeded randomness logged). Default: deterministic.
+
+L1-KCE-2: Bounded Output
+
+KCE must enforce boundedness:
+
+||v|| ≤ v_max (via saturation)
+
+tempo bounded by T_min ≤ T ≤ T_max
+
+L1-KCE-3: No Semantic Promotion
+
+KCE cannot assert meaning, truth, causality, or policy. It can only emit:
+
+compression results
+
+mode selection result
+
+energy accounting
+
+diagnostic flags
+
+L1-KCE-4: Audit Trace Required
+
+Every ArmVectorPacket includes:
+
+mode chosen
+
+indices/IDs of participating signals
+
+parameter set ID (or hash)
+
+any fail-loop increment reason
+
+If trace missing → violation.
+
+4) Allowed Compositions (Lane 1)
+
+Think of Lane 1 as “legal plumbing.”
+
+Upstream Allowed
+
+OP.INGEST → populates guest table
+
+OP.GATE (pre-filter) → refines G before KCE
+
+OP.SDE.VAL (optional) → validates any explicit dynamics in the inputs (not required)
+
+Downstream Allowed
+
+OP.PR (“Plato’s Revenge” core) receives (v, mode, tempo, E_split)
+
+OP.AUDIT.LOG receives trace
+
+OP.MONITOR receives diagnostics
+
+Disallowed
+
+KCE feeding directly into policy decisions (permissions, access keys, authority)
+
+KCE calling retrieval layers (FRYT / catacombs) itself
+
+KCE triggering new goals/objectives
+
+KCE is middle-layer metabolism, not executive authority.
+
+5) Failure Modes → Violation Enums (default postures)
+
+These map KCE failures into the AQ-OS violation spine responses.
+
+OP.KCE Failure Events
+
+KCE-DIV0: Σw_i = 0 (division risk)
+
+KCE-DIM: signal dimensional mismatch (no valid projection available)
+
+KCE-ENERGY: energy accounting error exceeds tolerance
+
+KCE-JITTER: tempo instability / oscillation beyond hysteresis bounds
+
+KCE-MODE_OSC: rapid mode flip-flop violates mode-lock
+
+KCE-TRACE_MISS: missing trace / params / audit hooks
+
+KCE-SAT_BREACH: saturation failed, output exceeds bound
+
+Default Responses
+
+KCE-TRACE_MISS → HALT (architecture breach: no accountability)
+
+KCE-SAT_BREACH → HALT (boundedness violated)
+
+KCE-DIV0 → DEGRADE_MODE (idle/last-state, log event)
+
+KCE-DIM → EXIT_WITH_REPORT (unless projection layer exists & is deterministic)
+
+KCE-ENERGY → DEGRADE_MODE first; repeat in window → EXIT_WITH_REPORT
+
+KCE-JITTER / KCE-MODE_OSC → DEGRADE_MODE (enable smoothing/lock), repeat → EXIT_WITH_REPORT
+
+This keeps with our ladder: degrade → exit on repeat; hard halts for architecture breaches.
+
+6) Minimal Operator Spec Block (Lane 1 format)
+
+OP.KCE(G, ctx, σ; params) → (P, σ')
+
+Where:
+
+P.v = SAT( COMPRESS_mode(G, ctx, σ), params.sat[mode] )
+
+P.mode = SELECT(ctx, σ, params.selector)
+
+P.E_split = SPLIT(E_in(G), params.energy[mode])
+
+P.tempo = TEMPO(ctx, E_in, params.tempo) with smoothing + hysteresis
+
+σ' updates: mode-lock counter, fail depth d, last tempo
+
+All functions are deterministic and logged by params_id.
