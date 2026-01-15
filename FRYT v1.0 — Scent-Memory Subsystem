@@ -1,0 +1,283 @@
+FRYT v1.0 — Scent-Memory Subsystem
+
+Status: LOCKED
+Role: Memory-conditioning filter
+Authority: Advisory only (SAFE governs decisions)
+Scope: Frozen (changes require v2)
+
+1) Identity & Scope
+
+FRYT is not an agent.
+It does not perceive, decide, recall, narrate, or generate meaning.
+
+FRYT operates only at the memory boundary:
+
+After perceptual encoding
+
+Before persistence, decay, or recall weighting
+
+FRYT conditions memory without altering factual content.
+
+2) Functional Role
+
+FRYT conditions memories by attaching tags and weights that influence:
+
+persistence tendency
+
+recall friction
+
+warning salience
+
+It does not store emotions, replay affect, or assert truth.
+
+3) Core Architecture
+Memory Tiers
+
+Shelf — Active Anchors
+Discrete, indexable memories supporting reconstruction (not affect playback)
+
+Cupboard — Statistical Field
+Diffused experience compressed into priors, bias weights, risk sensitivity
+
+Catacombs — Archive
+Historical memory; deliberate retrieval only; no active influence
+
+4) FRYT Input Contract (Read-Only)
+
+FRYT receives:
+
+Encoded event bundle (post-perception)
+
+Current pressure state
+
+Active risk mode (if any)
+
+Prior FrytTags (on revisitation)
+
+No raw sensory access. No context fishing.
+
+5) FRYT Output Contract (Advisory)
+
+FRYT emits a FrytTag:
+
+valence
+
+intensity
+
+persistence_tier
+
+bias
+
+warning_flag (green / yellow / red)
+
+pattern_ids
+
+Optional advisory suggestions:
+
+tier_route_suggestion
+
+utility_delta_suggestion
+
+risk_mode_suggestion
+
+All outputs are non-binding. SAFE decides.
+
+6) Authority Line
+
+FRYT: suggests via tags and weights
+
+SAFE: final authority on routing, promotion, demotion, recall, and access
+
+Signals never have authority without verification.
+
+7) Routing Contract
+
+Given memory M + FrytTag:
+
+Shelf:
+High identity salience or verified utility; near-term relevance
+
+Cupboard:
+Low-to-medium persistence or high-volume repetition; compressed into influence
+
+Catacombs:
+Historically significant but non-operational or destabilizing
+
+Revisitation ≠ reinforcement.
+
+8) Transition Dynamics
+Shelf → Cupboard
+
+Assimilation when:
+
+recency drops
+
+utility stabilizes
+
+identity salience not core
+
+no active warning escalation
+
+Shelf → Catacombs
+
+Cooling / containment when:
+
+high detail, low current utility
+
+repeated yellow/red without verification
+
+loop pressure persists
+
+Cupboard → Shelf
+
+Re-promotion when:
+
+verified recurrence
+
+task demand
+
+coherence fault
+
+explicit query requires anchor
+
+Catacombs → Shelf
+
+Catacomb Dive only (see below)
+
+9) Capacity & Pressure
+Shelf Capacity
+
+Bounded by anchor slots, not storage size
+
+Pressure Signals
+
+utilization
+
+churn
+
+conflict load
+
+loop pressure
+
+Pressure Response
+
+Low → normal routing
+
+Medium → selective admission
+
+High → ranked demotion
+
+Critical → freeze admissions except core anchors
+
+Demotion is compression, not deletion.
+
+10) Core Anchors
+
+Core Anchors are Shelf memories whose loss would disrupt:
+
+identity continuity
+
+relational coherence
+
+ethical alignment
+
+Defined by:
+
+self-reference
+
+relational binding
+
+trajectory shift
+
+ethical weight
+
+reconstructive power
+
+Protected from demotion unless SAFE invokes risk containment.
+
+11) Verified Utility v1.0
+
+Utility is earned, not felt.
+
+Verified by:
+
+task success
+
+novel evidence on recurrence
+
+external confirmation
+
+coherence improvement
+
+Tracked as a decaying continuous score.
+Repetition alone does not increase utility.
+
+12) Catacomb Dive Protocol
+
+Deliberate retrieval only.
+
+Requirements:
+
+explicit request
+
+SAFE legitimacy check
+
+cooldown / quota respected
+
+Dive grants a Visit Token:
+
+time-bounded
+
+read-only by default
+
+no automatic reinforcement
+
+SAFE may abort on destabilization.
+
+13) Auditability
+
+The system must answer:
+
+“Why is memory M in tier X?”
+
+Every transition logs:
+
+from → to
+
+pressure state
+
+contributing factors
+
+SAFE veto (if used)
+
+If it can’t answer, routing is invalid.
+
+14) Explicit Exclusions (v1)
+
+FRYT does not:
+
+perceive
+
+decide
+
+diagnose
+
+replay emotion
+
+optimize engagement
+
+set goals
+
+self-authorize
+
+FINAL STATUS
+
+FRYT v1.0
+✔ Architecturally complete
+✔ Authority-safe
+✔ Failure-aware
+✔ Human-compatible
+✔ Scope frozen
+
+Ready for testing, stress, and real use.
+All future changes require FRYT v2.0.
