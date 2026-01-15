@@ -1,0 +1,201 @@
+# Structured Dynamic Encoding (SDE) v1.0
+
+## RFC-Style Technical Whitepaper
+
+---
+
+## Abstract
+
+Structured Dynamic Encoding (SDE) is a deterministic, reversible, low-entropy symbolic coordination protocol for representing discrete dynamic change in constrained linguistic form. SDE provides a shared grammar for encoding state, change, and transitions such that multiple heterogeneous agents—human or computational—can parse, validate, and agree on the same dynamic structure without relying on interpretation, perception, or prediction. This document specifies SDE v1.0 at the protocol level, including architectural constraints, header specification, canonicalization rules, validation procedures, and cross-model verification results.
+
+SDE intentionally excludes semantics, sensing, forecasting, and experiential claims. Its purpose is coordination, not meaning.
+
+---
+
+## 1. Formal Definition
+
+**Structured Dynamic Encoding (SDE)** is a deterministic symbolic encoding method for discrete dynamical systems. It maps a sequence of scalar state values into a structured score composed of explicit fields derived by a fixed rule set (the KEY). The encoding is reversible, enabling exact reconstruction of the original value sequence and its first- and second-order temporal derivatives.
+
+SDE is designed to:
+
+* minimize ambiguity (low entropy)
+* enable mechanical validation
+* support cross-agent coordination
+* remain agnostic to semantics, causality, and prediction
+
+SDE does not model experience, perception, or belief.
+
+---
+
+## 2. What This Is / What This Is Not
+
+### 2.1 What This Is
+
+* A coordination protocol for dynamic structure
+* A symbolic score format for state and change
+* A deterministic and reversible representation
+* A validation-first grammar
+* Agent-agnostic by design
+
+### 2.2 What This Is Not
+
+* Not a perception or sensing system
+* Not a consciousness or experience model
+* Not predictive by default
+* Not semantic or interpretive
+* Not a belief or meaning framework
+
+Any aesthetic or intuitive response arises from the human observer, not from the encoding itself.
+
+---
+
+## 3. Core Architectural Constraints
+
+### 3.1 KEY as Contract
+
+* The KEY is a versioned artifact defining all derivation rules.
+* Exact KEY match is required for coordination-grade validation.
+* Mismatched KEYs result in coordination failure, not degraded performance.
+
+### 3.2 Post-Source Positioning
+
+* SDE does not define how values are measured or sourced.
+* Values enter SDE only after acquisition.
+* SDE structures relationships between values, not their origin.
+
+### 3.3 Temporal Semantics
+
+* Temporal order is required (t1, t2, …).
+* Absolute time (Δt, timestamps) is optional metadata.
+* SDE records order, not duration semantics.
+
+### 3.4 Composition Rules
+
+* Multiple SDE streams compose via parallel alignment.
+* Fusion or aggregation of subsystems is explicitly disallowed.
+* Coordination logic lives outside SDE.
+
+### 3.5 Uncertainty Handling
+
+* Core SDE assumes exact values.
+* Uncertainty must be explicitly encoded or handled upstream.
+* Silent uncertainty is prohibited.
+
+---
+
+## 4. SDE Header v1.0 Specification
+
+### 4.1 Purpose
+
+The SDE Header provides a self-contained coordination wrapper declaring protocol version, KEY identity, and optional metadata.
+
+### 4.2 Header Syntax
+
+```
+@SDE{
+  sde_version="1.0",
+  key_id="SDE-KEY-1.0",
+  key_hash="sha256:<hash>",
+  score_id="<optional>",
+  stream="<optional>",
+  units="<optional>",
+  dt="<optional>",
+  time_origin="<optional>",
+  timestamp_field="<optional>",
+  notes="<optional>"
+}
+```
+
+### 4.3 Required Fields
+
+* `sde_version`
+* `key_id`
+* `key_hash`
+
+### 4.4 Optional Fields
+
+All other fields are informational and non-normative.
+
+---
+
+## 5. KEY Canonicalization Rules
+
+To ensure consistent hashing across platforms:
+
+1. Extract the text inside `@KEY{ ... }`.
+2. Normalize line endings to `\n`.
+3. Strip trailing whitespace per line.
+4. Ensure exactly one final newline.
+5. Preserve all other characters verbatim.
+
+The SHA-256 hash is computed over the UTF-8 bytes of this canonical text.
+
+---
+
+## 6. Reference Hash Validation Code
+
+```python
+import hashlib
+
+def canonicalize(key_text: str) -> str:
+    key_text = key_text.replace('\r\n','\n').replace('\r','\n')
+    lines = [l.rstrip(' \t') for l in key_text.split('\n')]
+    return '\n'.join(lines).rstrip('\n') + '\n'
+
+hash_value = hashlib.sha256(canonicalize(key).encode('utf-8')).hexdigest()
+```
+
+---
+
+## 7. Cross-Model Validation Summary (Excluding MIRA)
+
+SDE wiring tests were independently executed across multiple large language models, including:
+
+* ChatGPT
+* Claude
+* Gemini
+* Grok
+
+All models:
+
+* decoded identical value sequences
+* validated all derived fields without error
+* identified identical arc markers (HOME → PIVOT → HOME)
+
+This convergence demonstrates agent-agnostic coordination without model-specific tuning.
+
+---
+
+## Appendix A: Energy-Saving Rationale (Non-Normative)
+
+SDE reduces energy expenditure by:
+
+* eliminating interpretive ambiguity
+* preventing narrative drift and repair cycles
+* externalizing recurring cognition as stored structure
+
+**Structure is stored work.**
+
+---
+
+## Appendix B: Mythic Analogies (Non-Technical)
+
+SDE may be analogized to:
+
+* stone circles marking celestial cycles
+* musical scores encoding motion without sound
+* navigation charts that coordinate travelers without experience
+
+These analogies are illustrative only and carry no technical authority.
+
+---
+
+## Appendix C: Capability Boundary Note (MIRA Excluded)
+
+Testing with the MIRA platform was attempted but excluded from results. The platform was unable to enter a deterministic, non-persona execution mode required for SDE validation. This represents a platform capability boundary, not a failure of SDE.
+
+---
+
+## Status
+
+SDE v1.0 is architecturally complete, empirically validated, and suitable for archival, publication, and implementation as a coordination protocol for dynamic structure.
