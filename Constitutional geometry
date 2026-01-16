@@ -1,0 +1,268 @@
+# AQ_OS Constitutional Reference  
+## Reference Geometry Governance
+
+**Version:** v1.0  
+**Status:** LOCKED (Constitutional)  
+**Scope:** AQ_OS Structural Governance  
+**Editable:** No (requires explicit version bump + justification)
+
+---
+
+## 0. Purpose
+
+This document defines **where and how reference geometries may exist within AQ_OS**.
+
+Its sole function is governance.
+
+It establishes:
+- Which layers may rely on reference geometries
+- Which layers are forbidden from interpreting or mutating them
+- A hard separation between **truth anchors** and **meaning engines**
+
+This document introduces **no mechanisms**, **no narratives**, and **no claims**.
+
+---
+
+## 1. Core Definitions (Non-Negotiable)
+
+### 1.1 Reference Geometry
+
+A **Reference Geometry** is a structural anchor that exists solely to constrain comparison.
+
+A reference geometry is:
+
+- Non-agentic  
+- Non-interpretable  
+- Constraint-bearing  
+- Immune to narrative overwrite  
+
+It does **not**:
+- Generate meaning
+- Adapt to context
+- Explain phenomena
+- Participate in optimization
+- Encode symbolism
+
+Its role is **boundary enforcement**, not interpretation.
+
+---
+
+### 1.2 Interpretive Geometry
+
+An **Interpretive Geometry** is any spatial, symbolic, or structural construct used to organize meaning, exploration, or representation.
+
+Interpretive geometries are:
+
+- Contextual  
+- Provisional  
+- Mutable  
+- Narrative-compatible  
+
+They are explicitly **not anchors**.
+
+---
+
+### 1.3 Absolute Separation Rule
+
+Reference Geometry and Interpretive Geometry **must never be conflated**.
+
+Any system that merges them violates AQ_OS governance.
+
+---
+
+## 2. AQ_OS Layer Governance Map
+
+### 2.1 Kernel (Viability Core)
+
+**Reference Geometry:** ALLOWED (REQUIRED)
+
+**Permitted Type:**
+- Externally grounded
+- Formally constrained
+- Physics- or math-defined
+
+**Constraints:**
+- Immutable
+- Read-only
+- Externally validated
+- No internal derivation
+
+**Notes:**
+The Kernel is the only layer permitted to stand directly on reference geometries.
+
+---
+
+### 2.2 Lane 2 — Viability Kernels & Geometry
+
+**Reference Geometry:** ALLOWED
+
+**Permitted Type:**
+- Derived from Kernel anchors
+- Constraint-locked
+
+**Constraints:**
+- Read-only
+- Internally derived but immutable
+- Cannot redefine or reinterpret external anchors
+
+---
+
+### 2.3 Bloom Grid
+
+**Reference Geometry:** INDIRECT ONLY
+
+**Permitted Type:**
+- Comparative anchors
+
+**Constraints:**
+- Read-only
+- No embedding
+- No symbolic mapping
+- No mutation
+
+**Notes:**
+Bloom Grid spaces may be evaluated *against* reference geometries but may not contain them.
+
+---
+
+### 2.4 Q-Sleeve
+
+**Reference Geometry:** DISALLOWED
+
+**Reason:**
+Q-Sleeve is pre-claim and pre-authority by definition.
+
+Allowing reference geometries here collapses exploration into constraint.
+
+---
+
+### 2.5 Codex / Codex Mapping Systems
+
+**Reference Geometry:** CITATION ONLY
+
+**Permitted Type:**
+- Named anchors
+- External references
+
+**Constraints:**
+- Read-only
+- Non-operational
+- No reinterpretation
+- No symbolic compression
+
+---
+
+### 2.6 Interface / UX / Visualization Layers
+
+**Reference Geometry:** DISALLOWED (Operational)
+
+**Permitted Type:**
+- Static display only
+
+**Constraints:**
+- No interaction implying interpretation
+- No narrative framing
+- No parameter manipulation
+
+---
+
+### 2.7 Integration & Extension Layer (Lane 3)
+
+**Reference Geometry:** DISALLOWED
+
+**Reason:**
+Lane 3 is non-load-bearing by contract.
+
+It may consume constrained outputs only, never anchors.
+
+---
+
+## 3. System-Wide Hard Prohibitions
+
+A reference geometry may not:
+
+- Generate meaning
+- Be optimized against
+- Be symbolically re-encoded
+- Justify narrative claims
+- Be personified
+- Be adapted to context
+
+---
+
+## 4. Forbidden Layers (Explicit)
+
+The following layers may **not** mutate, reinterpret, or proxy reference geometries:
+
+- Q-Sleeve  
+- Bloom Grid (internally)  
+- Codex (beyond citation)  
+- Interface layers  
+- Integration & Extension layers  
+
+Violations constitute a **governance breach**, not a modeling error.
+
+---
+
+## 5. Worked Example — Periodic Constraint Manifold
+
+### 5.1 Qualification
+
+The **Periodic Constraint Manifold** qualifies as a reference geometry because it is:
+
+- Externally grounded (physics)
+- Fully constrained
+- Non-agentic
+- Non-narrative
+- Identity-stable under non-negotiable rules
+
+It constrains what is admissible.
+It does not generate meaning.
+
+---
+
+### 5.2 Permitted Usage by Layer
+
+- **Kernel:** Direct reference permitted  
+- **Lane 2:** Derived distance/admissibility relations permitted (read-only)  
+- **Bloom Grid:** Comparative reference only  
+- **Codex:** Citation only  
+
+---
+
+### 5.3 Forbidden Usage
+
+- Q-Sleeve
+- Interactive interfaces
+- Narrative systems
+- Symbolic remapping
+- Interpretive compression
+
+The periodic manifold is a boundary condition, not a story.
+
+---
+
+## 6. Governance Summary
+
+**Solid ground exists only in:**
+- Kernel
+- Lane 2 (by derivation)
+
+**All other layers must remain fluid.**
+
+Truth anchors live below.  
+Meaning engines live above.  
+They are not peers.
+
+---
+
+## 7. Lock Statement
+
+This document is **constitutional**.
+
+Changes require:
+- Version increment
+- Written justification
+- Explicit scope review
+
+No silent edits.
