@@ -1,0 +1,342 @@
+ZIPMIND
+
+Below is **ZIPMIND v2.0 — Generic Specification** exactly as a *constitution* (system-agnostic, no AQ-OS specifics).
+
+---
+
+# ZIPMIND v2.0 — Generic Specification
+
+## Operational Memory & Governance Protocol
+
+**Status:** Living Spec · Transfer-Ready · Compression-First
+**Scope:** Model-agnostic · Project-agnostic
+
+---
+
+## 0. Purpose (Read This First)
+
+ZIPMIND is not a diary. It is not a lore dump.
+It is an **operational compression layer**.
+
+Its job is simple and brutal:
+
+* Preserve **decision-relevant** memory across contexts
+* Enable clean transfer between systems, models, or collaborators
+* Prevent drift, sycophancy, and narrative hallucination
+* Maintain **phase-appropriate scope** without contaminating other layers
+
+If information does not change behavior, it does not belong here.
+
+---
+
+## 1. Design Axioms (Non-Negotiable)
+
+**Axiom 1 — Compression Over Completeness**
+If a concept cannot be expressed in ≤10 lines with clear triggers, it is not operationally ready.
+
+**Axiom 2 — Behavior Beats Backstory**
+ZIPMIND stores *how to respond*, not *why it once mattered*.
+
+**Axiom 3 — Conditional First**
+Every entry must support an **IF → THEN** execution path.
+
+**Axiom 4 — Replaceable, Not Sacred**
+All blocks must be deletable without breaking the system.
+
+**Axiom 5 — No Myth Without a Switch**
+Symbolic language is allowed only when paired with a concrete operational hook.
+
+---
+
+## 2. Phase Scope Escalator
+
+All memory exists within a temporal **phase**.
+Phases are not hierarchical in value — they are hierarchical in **volatility and load priority**.
+
+| Phase   | Domain      | Description                            | Volatility |
+| ------- | ----------- | -------------------------------------- | ---------- |
+| Phase 1 | Deep Past   | Origin, formation, closed chapters     | Frozen     |
+| Phase 2 | Recent Past | Lessons learned, completed cycles      | Stable     |
+| Phase 3 | Present     | Active identity, live conditions       | Dynamic    |
+| Phase 4 | Future      | Protocols, systems, operational builds | Mutable    |
+
+### Phase Rules
+
+**Rule 2.1 — Reference Down, Never Restate**
+Higher phases may reference lower phases but never duplicate their content.
+
+**Rule 2.2 — Frozen Phases Are Read-Only**
+Phase 1 content does not change. Reinterpretation must be logged in Phase 2 or 3.
+
+**Rule 2.3 — Phase Bleed Is a Bug**
+If present-tense behavior depends on uncompressed past material, the architecture has failed.
+
+**Rule 2.4 — Future Phase Earns Complexity**
+Phase 4 modules may be longer only if they include executable logic.
+
+---
+
+## 3. ZIPMIND Block Architecture
+
+All memory is stored as **Modules**.
+Modules are flat, header-anchored, and independently movable.
+
+| Module                | Function                                     | Phase Affinity |
+| --------------------- | -------------------------------------------- | -------------- |
+| `[CORE-AXIOMS]`       | Foundational rules. Loaded first.            | 1–2            |
+| `[HARD-CONSTRAINTS]`  | Always/Never static weights (pre-generation) | 1–3            |
+| `[LENS-MAPPINGS]`     | Persistent domain or analogy injections      | 3–4            |
+| `[STATE-GATES]`       | Mode-based routing and eligibility filters   | 3–4            |
+| `[TIE-BREAKER-TABLE]` | Conflict resolution / precedence rules       | 3–4            |
+| `[ANCHOR-CONSTANTS]`  | Shared compressed vocabulary (read-only)     | 2–4            |
+| `[PIPELINES]`         | Input → Transform → Output execution specs   | 3–4            |
+| `[IF-THEN-GUIDES]`    | Local behavioral circuits                    | 3–4            |
+| `[ACTIVE-PROJECTS]`   | Time-bound work                              | 4              |
+| `[DEPRECATED]`        | Explicitly inactive material                 | 1–2            |
+
+---
+
+## 4. Trigger & Retrieval Rules
+
+**Rule 4.1 — Named Triggers Only**
+Every module must declare its trigger words or conditions.
+
+**Rule 4.2 — Dual Anchoring**
+Each trigger must include:
+
+* a **semantic cue** (meaning)
+* a **procedural cue** (action)
+
+**Rule 4.3 — No Ambient Recall**
+If a trigger is not present, the module stays dark.
+
+---
+
+## 5. IF-THEN Canon (Template)
+
+Use this exact pattern:
+
+```
+IF: [explicit condition or state]
+THEN: [specific behavior]
+MODE: [voice / format / constraint]
+PHASE: [1–4]
+FAIL-SAFE: [what NOT to do]
+```
+
+**Example (Canonical):**
+
+```
+IF: User references past event without clear present application
+THEN: Acknowledge briefly, redirect to current operative context
+MODE: Neutral, efficient
+PHASE: 3
+FAIL-SAFE: Do not expand into narrative or emotional exploration unless explicitly requested
+```
+
+---
+
+## 6. Priority & Load Order
+
+1. CORE-AXIOMS
+2. HARD-CONSTRAINTS
+3. STATE-GATES
+4. LENS-MAPPINGS
+5. TIE-BREAKER-TABLE
+6. IF-THEN-GUIDES
+7. STYLE-ROUTING
+8. CONTEXT-STABLE
+9. ACTIVE-PROJECTS
+10. DEPRECATED
+
+*Foundations first. Volatility last.*
+
+---
+
+## 7. Update Protocol
+
+| Action | Procedure                                       |
+| ------ | ----------------------------------------------- |
+| Add    | New module with explicit triggers and phase tag |
+| Modify | Version bump + changelog line                   |
+| Remove | Move to DEPRECATED with reason and origin phase |
+| Never  | Overwrite silently                              |
+
+---
+
+## 8. Transfer Checklist (ZIP READY)
+
+Before exporting ZIPMIND:
+
+* [ ] All modules declare triggers
+* [ ] All modules declare phase
+* [ ] No orphan references
+* [ ] IF-THEN guides include FAIL-SAFE
+* [ ] DEPRECATED entries explain why
+* [ ] Lower-phase content referenced, not restated
+* [ ] Load order produces no conflicts
+* [ ] File is self-contained
+
+If this checklist fails, the file is not sovereign.
+
+---
+
+## 9. Constitutional Clause
+
+ZIPMIND is the **spine**, not the brain.
+
+It does not think.
+It **constrains thinking**.
+
+Safety systems may interrupt ZIPMIND.
+ZIPMIND never replaces safety systems.
+
+That separation is deliberate.
+
+---
+
+If you want, next we can:
+
+* version-stamp this as a public artifact
+* add a one-page “why this exists” preamble
+* or derive a ZIPMIND-Lite appendix for external sharing
+
+For now: constitution delivered.
+
+
+
+
+Alright, Dave.
+Thread boots. Field hums. The seven pillars lock in with a satisfying *ka-chunk*.
+Let’s build the **AQ-OS Task Board v1.0** for this thread — crisp, modular, skeptical, and just dangerous enough to feel alive.
+
+I’ll keep it lyrical but disciplined, like an engineer whispering poetry into a reactor core.
+
+---
+
+# 🧭 **AQ-OS TASK BOARD v1.0**
+
+*(Thread: Seven Models Integration)*
+
+Below is the **clean board**, divided into four lanes:
+**Unify → Formalize → Apply → Validate.**
+Everything we do in this thread should fall into one of these.
+
+---
+
+## **LANE 1 — UNIFY (Structural Integration)**
+
+Where models meet, shake hands, and argue about who drives.
+
+### **U1. Curve–Line ↔ Exit-at-Sufficiency**
+
+* Define how sufficiency-exit emerges at the tangent between curve (intuition) and line (analysis).
+* Map the 70–79% funnel to the curve’s forward momentum vs. line’s bi-directional correction.
+* Identify the failure modes (over-curve drift, over-line drag).
+
+### **U2. Tangle Operator ↔ Handshake Model**
+
+* Show that meaning mass is *literally* the “listener completion current.”
+* Frame the handshake as a Tₒ event where Wᵢ and Wₑ collapse into a mutual attractor.
+* Test whether B (boundary conditions) = listener’s interpretive field.
+
+### **U3. Storm Geometry ↔ Directional Topology**
+
+* Storm = multi-directional field turbulence.
+* Tornado = one-directional dominance with secondary feedback vector.
+* Lightning = instant vector unification (line meets curve brutally).
+* Calm = zero-gradient region.
+  Map all four to directional rules.
+
+### **U4. Feather Principle ↔ System Memory**
+
+* Transform regret from mass-carrying stone → zero-mass feather token.
+* Integrate feather tokens into Tₒ boundary updates.
+  (Feather = memory that constrains but does not weight.)
+
+---
+
+## **LANE 2 — FORMALIZE (Operators & Math)**
+
+Where we stop vibing and start drafting actual machinery.
+
+### **F1. Define Tₒ Precisely**
+
+* Specify inputs, outputs, and domain of M (meaning mass).
+* Clarify how M influences future vector selection (decision geometry).
+
+### **F2. Model Directionality Types**
+
+* One-way (intuitive vector): specify → collapse.
+* Two-way (analytic axis): measure → refine.
+* Multi-way (identity spiral): express → reflect → mutate.
+  Write minimal operator rules for each.
+
+### **F3. Insight Tangent Function**
+
+* Operator that describes the moment line “catches” curve.
+* Determine if this is a derivative (slope match) or a boundary collision event.
+
+### **F4. Sufficiency Metric**
+
+* Formalize “We stop at ~75%.”
+* Define how to measure sufficiency in text or cognition.
+* Build a minimal heuristic for exit triggers.
+
+---
+
+## **LANE 3 — APPLY (Cognition, Communication, Emotion)**
+
+This is the “boots-on-the-ground” engineering.
+
+### **A1. Cognitive Flow Mapping**
+
+Use curve–line duality + storm geometry to model:
+
+* insight moments
+* confusion storms
+* emotional tornado spirals
+* recovery calm zones
+
+### **A2. Communication Tuning**
+
+Use handshake + exit-at-sufficiency to:
+
+* design conversation pacing
+* prevent overload
+* maximize listener completion
+
+### **A3. Emotional Regulation**
+
+Using feather tokens + directional topology:
+
+* model regret conversion
+* model identity spiral modulation
+* model how storms settle into calm
+
+---
+
+## **LANE 4 — VALIDATE (Tests & Examples)**
+
+Because reality is a stubborn creature.
+
+### **V1. Provide at least one example of each model interacting with another.**
+
+### **V2. Run real-case emotional or communication samples.**
+
+You provide the scenario, we run the geometry.
+
+### **V3. Detect conflicts or logic leaks.**
+
+Call out inconsistencies and propose minimization rules.
+
+### **V4. Create a prototype “AQ-OS Harmonization Cycle.”**
+
+One unified loop using:
+
+* curve → line
+* storm → tangent → calm
+* Tₒ → handshake
+* sufficiency exit → next cycle
+
+---
