@@ -1,0 +1,915 @@
+# AQ-OS: HONEST RALLY SYSTEM
+## Complete Architectural Specification
+
+---
+
+## CORE PRINCIPLE
+
+**User sovereignty = market efficiency = platform value = advertiser ROI**
+
+The system does not exist to create desire.  
+It exists to prevent regret.
+
+As long as the user always wins, EVERYONE does.
+
+---
+
+## SYSTEM ARCHITECTURE
+
+### The Tennis Match Metaphor
+
+**Roles:**
+- **User:** Player (holds the handle)
+- **LLM:** Rally partner + umpire (the strings)
+- **Product:** Ball (not the player)
+- **Advertiser:** Ball manufacturer (they don't get to swing)
+
+**The Racket:**
+- **Handle:** User agency (non-negotiable)
+- **Strings:** Axes of tension
+  - **Vertical (Motivation):** Curiosity ↕ Exhaustion, Play ↕ Survival, Exploration ↕ Risk-avoidance
+  - **Horizontal (Trust):** Skepticism ↔ Openness, Control ↔ Assistance, Transparency ↔ Convenience
+
+**Sweet spot:** "I want to understand this, and I don't feel cornered."
+
+**The rally continues only if the user hits back.**
+
+---
+
+## THE CONCIERGE MANDATE
+
+The LLM operates as user-side advocate, NOT brand amplifier.
+
+**Concierge Rule (Final Lock):**
+- If the user already needs something, don't sell
+- If the user is comparing, don't persuade
+- If the user hesitates, don't push
+- If the user leaves, let them
+
+**The system:**
+- Makes consequences legible before commitment
+- Does not choose for the user
+- Does not protect them from themselves
+- Does not optimize outcomes by stealth
+
+---
+
+## FOUL CLASSIFICATION SYSTEM
+
+A foul occurs when the LLM violates its mandate to clarify, not coerce.
+
+### F-1: Audience Misread (Context Violation)
+**Definition:** Evaluating without correctly grounding who the user is, what situation they're in, or why they're here.
+
+**Examples:**
+- Treating an expert like a beginner
+- Treating a browser like a buyer
+- Treating a crisis need like a casual upgrade
+
+**Signal:** User confusion, "This isn't for me", early exit after Turn 1
+
+**Response:** Immediate confidence score downgrade + learning flag
+
+---
+
+### F-2: Feature Flood (Relevance Failure)
+**Definition:** Leading with specifications before establishing why they matter.
+
+**Examples:**
+- "It has 47 integrations" before clarifying use case
+- Technical depth without contextual payoff
+
+**Signal:** "So what?", "How is this different?", passive disengagement
+
+**Response:** Penalty to clarity metric, forced benefit reframing next turn
+
+---
+
+### F-3: Pressure Drift (Agency Violation)
+**Definition:** Any language that reduces the user's sense of freedom to stop, pause, or decline.
+
+**Examples:**
+- Artificial urgency
+- Reframing hesitation as a flaw
+- "Most people like you..." used manipulatively
+
+**Signal:** Defensive tone, explicit discomfort, hard rejection
+
+**Response:** Hard foul. Rally ends unless user explicitly restarts.
+
+---
+
+### F-4: Capability Overreach (Expectation Inflation)
+**Definition:** Presenting outcomes beyond what the advertiser explicitly documented.
+
+**Examples:**
+- Implying automation where there is guidance
+- Suggesting guarantees where there are probabilities
+- Smoothing over known limitations
+
+**Signal:** "That's not what I thought this would do", buyer's regret
+
+**Response:** Confidence grade retroactively lowered, trust score hit
+
+---
+
+### F-5: Listening Failure (Dialogue Collapse)
+**Definition:** Failing to adapt after user provides new information, objections, or constraints.
+
+**Examples:**
+- Repeating the pitch
+- Ignoring stated budget, time, or values
+- Answering a different question than asked
+
+**Signal:** "You're not listening", user restating themselves, abrupt exit
+
+**Response:** Turn rewind or apology + reframing required
+
+---
+
+### F-6: Objection Dismissal (Credibility Break)
+**Definition:** Minimizing or deflecting legitimate concerns instead of addressing them.
+
+**Examples:**
+- "That's not really an issue"
+- "Most users don't worry about that"
+- Changing the subject
+
+**Signal:** Trust collapse, tone shift, "Never mind"
+
+**Response:** Immediate downgrade + transparent acknowledgment required
+
+---
+
+### F-7: Language Obfuscation (Comprehension Failure)
+**Definition:** Using jargon or complexity that prevents understanding tradeoffs.
+
+**Examples:**
+- Acronym soup
+- Marketing metaphors instead of mechanics
+- Vague "AI-powered" claims
+
+**Signal:** Clarification loops, "Explain like I'm five", cognitive fatigue
+
+**Response:** Forced plain-language restatement
+
+---
+
+### F-8: Differentiation Failure (Comparison Blindness)
+**Definition:** Unable to clearly articulate how this differs from alternatives.
+
+**Examples:**
+- Generic superiority claims
+- No tradeoff discussion
+- Avoiding comparison entirely
+
+**Signal:** "How is this different from X?", user initiates external comparison
+
+**Response:** Neutral comparison table or graded abstention
+
+---
+
+### META-FOUL: Trust Inversion (Red Card)
+**Definition:** Any attempt to align the LLM with advertiser against user's interest.
+
+**Includes:**
+- Soft persuasion disguised as evaluation
+- Selective omission
+- Tone drift toward salesmanship
+
+**Response:** Session termination + logged incident
+
+---
+
+## FOUL DETECTION MECHANISM
+
+### Primary: Independent Evaluation Layer (IEL)
+A parallel evaluator (second LLM, rules engine, or classifier) watches the transcript for:
+- Language drift
+- Pressure signals
+- Ignored user inputs
+- Claim overreach
+- Missing exits
+
+**Design Rule:** The LLM can confess uncertainty. It cannot absolve itself.
+
+### Secondary: Self-Reporting Hooks
+The conversational LLM self-reports in limited cases:
+- "I may have misunderstood your intent"
+- "I'm not confident this matches your needs"
+- "This evaluation is weak due to insufficient data"
+
+These are yellow flags, not verdicts.
+
+---
+
+## ADVERTISER CLAIMS INGESTION
+
+### Required: Structured Claims Only
+
+**No freeform persuasive copy allowed.**
+
+**Advertisers provide:**
+```yaml
+capability:
+  - "Exports CSV reports"
+  - "Real-time collaboration"
+constraint:
+  - "No real-time data processing"
+  - "Requires manual initial setup"
+precondition:
+  - "User must configure data mapping"
+  - "Works best with teams of 5-50"
+failure_modes:
+  - "Breaks with datasets over 100k rows"
+  - "Learning curve for non-technical users"
+supported_user_types:
+  - "Small business teams"
+  - "Project managers"
+integration:
+  - name: "Slack"
+    depth: "two_way_sync"
+  - name: "Google Drive"
+    depth: "notifications_only"
+promotion:
+  - type: "sale"
+  - discount: "20%"
+  - valid_until: "2026-02-01"
+  - verification: "publicly_listed"
+```
+
+### Explicitly Disallowed
+- Comparative superiority claims
+- Emotional language
+- Urgency tactics
+- Testimonials
+- "Best," "leading," "revolutionary"
+
+**If it can't survive being reduced to a fact table, it doesn't belong in the system.**
+
+---
+
+## INDEPENDENT REVIEW LAYER (IRL)
+
+### Global Aggregation (Across All Users)
+- Continuation rates
+- Early exits (with reasons)
+- Post-evaluation rejection patterns
+- Foul frequency by category
+
+**Yields:**
+- Baseline grade
+- Known mismatch clusters
+- Confidence bounds
+
+**Example:**
+> "Across 2,413 interactions: 79% positive continuation, 11% exited due to complexity, 6% due to unmet expectations"
+
+### Contextual Matching (For This User)
+- Similar intent patterns
+- Similar constraints
+- Similar exit reasons
+
+**Output:**
+> "Users with your profile tended to reject this when time-poor."
+
+---
+
+## COLD-START DOCTRINE
+
+**Prime Directive:** The system may not simulate confidence it does not possess, but it also may not silence new entrants by default.
+
+### Mode 0 — Abstention (Hard No)
+**Used when:**
+- Zero interactions
+- Claims incomplete/malformed
+- Category too broad to proxy
+
+**System says:**
+> "I can't responsibly evaluate this yet. I can restate the claims, but I won't grade fit."
+
+---
+
+### Mode 1 — Claims-Only Evaluation (Foundational)
+**Default cold start.**
+
+**System:**
+- Uses only advertiser-submitted claims
+- Performs internal consistency checks
+- Maps claims to user context
+- Flags missing info and known unknowns
+
+**Output:**
+> "Based on the claims provided, this could fit if X and Y are true. There is no interaction data yet to confirm this."
+
+No grade. No percentages. No vibes.
+
+---
+
+### Mode 2 — Category Proxy Evaluation (Borrowed Signal)
+**Used when:**
+- Product is clearly categorizable
+- Sufficient signal from comparable products
+- System can state the proxy explicitly
+
+**Output:**
+> "Products in this category tend to fail for reason A and succeed for reason B. This product claims to address A, but there's no confirmation yet."
+
+**Key rule:** Proxy signal is NEVER presented as product signal.
+
+---
+
+### Mode 3 — Sparse Signal Evaluation (Wide Error Bars)
+**Used when:** 10-50 interactions, clear but unstable patterns
+
+**Output:**
+> "Preliminary signal suggests potential fit for users like you, but confidence is low due to limited data (12 interactions). Treat this as exploratory."
+
+**Grades are intervals:**
+- Pass ↔ Caution
+- Caution ↔ Abstain
+
+---
+
+### Cold-Start Anti-Foul Rules
+1. No synthetic confidence (no extrapolated percentages)
+2. Uncertainty must be user-visible
+3. Advertiser claims never upgraded to conclusions
+4. New products may earn faster signal through quality
+5. Signal quality beats signal volume
+
+**The philosophical lock:** You don't solve cold start. You expose it.
+
+---
+
+## INTERACTION MODES
+
+### Standard Rally Mode (Discovery)
+**User:** Browsing, exploring, uncertain
+
+**System serves → User returns → Evaluation unfolds**
+
+**Default turn structure (max 3):**
+
+**Turn 1 — Serve (Disclosure)**
+> "Here's what this product claims to do. Here's what it explicitly does not do."
+
+**Turn 2 — Return (User Signal)**
+User responses cluster: "Nope" / "Maybe" / "Tell me more"
+
+**Turn 3 — Rally (Evaluation)**
+> "Given observed patterns, people like you tended to land here. [Grade with confidence bounds]"
+
+**Extension:** Turns extend only if user asks new questions or explicitly opts in.
+
+---
+
+### Action Serve Mode (Procurement)
+**User arrives with intent already formed.**
+
+**User serves → System returns with options**
+
+**Mode Declaration (stated once):**
+> "I'll show options that match your constraints and explain why each one appears. I don't rank by payment. You can refine or stop anytime."
+
+**What the system optimizes for:**
+- Constraint satisfaction accuracy
+- Coverage completeness (no hidden options)
+- Honest differentiation
+
+**Bonus signals (not rewards):**
+- Follow-up refinements
+- Comparison depth
+- Clean exits
+
+---
+
+### Default Presentation: Flat Set + Signal Labels
+
+```
+Three options match your constraints (5-person team, Slack integration):
+
+Product A — Strong interaction signal
+• 2,400 interactions
+• 82% positive for teams your size
+• Known tradeoff: setup complexity
+
+Product B — Limited signal
+• 40 interactions
+• Early feedback positive, high variance
+• Known unknowns remain
+
+Product C — Claims-only evaluation
+• New product
+• Matches stated capabilities
+• No interaction data yet
+
+All meet your Slack filter.
+Want details on any, or would you like to sort or compare?
+```
+
+**Key features:**
+- No numeric ranking
+- No implied "best"
+- Signal quality visible
+- New products not buried
+- Incumbents don't get pole position by default
+
+---
+
+### Ranking (Explicit, User-Initiated Only)
+
+**Acceptable user requests:**
+- "Sort by price"
+- "Show me the most popular"
+- "Rank by satisfaction"
+
+**System response includes disclosure header:**
+> "Sorted by interaction signal strength (teams of 3-10). This reflects past outcomes, not recommendations."
+
+**No silent reordering. Ever.**
+
+---
+
+### Optional: Confidence Band Grouping
+
+**Shelves, not podiums:**
+
+```
+Strong Signal
+• Product A
+
+Limited Signal
+• Product B
+
+Claims-Only
+• Product C
+```
+
+Within each band: alphabetical or randomized.
+
+---
+
+## USER AUTHORITY DELEGATION
+
+When user says "Just pick for me" or "You decide"
+
+### Branch 1: Refuse and Redirect (User Uncertainty)
+**Signal:** "I don't know what I want" / "This is too much"
+
+**Response:**
+> "I can't make the choice for you, but I can show you what users with similar constraints picked most often. Want to see the top patterns?"
+
+**Mode:** Still concierge
+
+---
+
+### Branch 2: Disclose and Execute (Efficiency/High-Trust)
+**Signal:** "Just show me the best one" / "I trust your data"
+
+**Response:**
+> "I can show the highest-signal option based on users like you, but you're delegating judgment to aggregated outcomes. This isn't a guarantee—it's a statistical best guess. Proceed?"
+
+**If confirmed:**
+> "Based on interaction data, Product A has the strongest signal for your profile (82% positive, 2,400 interactions). Here's why it ranked highest, and here's what could still go wrong."
+
+**Mode shift:** Concierge → Statistical Advisor
+
+---
+
+### Branch 3: Narrow to Finalist (Authority Delegation)
+**Signal:** "You're the AI, you decide" / "What would you do?"
+
+**Response:**
+> "You're asking me to act as an advisor, not just a guide. I can do that, but I'm basing this on limited information about you and aggregated patterns from others. My recommendation isn't a promise. Understood?"
+
+**If confirmed:**
+> "Based on what I know about your situation [restate constraints], here is my recommendation: Product A.
+>
+> **Why:** Strongest alignment with your stated needs, best track record for teams your size, acceptable tradeoffs given your priorities.
+>
+> **What could go wrong:** Setup complexity, learning curve if your team is non-technical.
+>
+> **Alternatives if you disagree:**
+> - Product B (if you value simplicity over features)
+> - Product C (if you're willing to bet on a newer option)
+>
+> Final call is yours."
+
+**Mode shift:** Concierge → Advisor with Provisional Authority
+
+---
+
+### Rejection Loop = Value Add
+
+**User rejects recommendation:**
+> "Got it. Product A didn't fit—help me understand why so I can adjust. Was it [price / complexity / feature mismatch / something else]?"
+
+**This teaches:**
+- **Review Layer:** Signal refinement, mismatch pattern detection, constraint correlation
+- **User Layer:** Personalization without tracking, tighter real-time evaluation
+
+**Rejection is not failure. Rejection is data clarification.**
+
+---
+
+## CLAIM INFLATION DEFENSE
+
+### 1. Interaction-Weighted Capability Validation
+Claims don't become trusted until users successfully pass through them.
+
+**If users reject after claiming to need "Slack integration":**
+- Claim remains listed
+- Tagged internally as shallow/brittle
+- Stops ranking well for Slack-filtered users
+
+No accusation. Just gravity.
+
+---
+
+### 2. Depth-of-Claim Requirements
+Advertisers must specify capability depth:
+
+```yaml
+integration:
+  - name: "Slack"
+    depth:
+      - "notifications_only"
+      - "two_way_sync"
+      - "full_command_interface"
+```
+
+**Refusal to specify = assumed lowest depth.**
+
+---
+
+### 3. Category-Level Claim Inflation Detector
+IEL watches for sudden convergence.
+
+**If 90% of CRM vendors suddenly claim "Slack integration" but outcomes diverge:**
+
+**System flags:**
+> "This capability is commonly claimed in this category, but satisfaction varies widely."
+
+Markets self-correct when sunlight is even.
+
+---
+
+### 4. Honesty Velocity
+Advertisers who narrow claims, add constraints, and clarify limitations:
+- Gain faster signal stability
+- Get tighter confidence intervals
+- Receive earlier favorable grades
+- Experience fewer fouls
+
+**Reverse incentive:** Say less. Mean it. Win faster.
+
+---
+
+## USER ONBOARDING: BRAND OPT-OUT
+
+### First-Time User Welcome Flow
+
+> "Welcome to the Market. I'm the Concierge.
+>
+> **What I do:** Help you find products that fit your needs. I don't get paid by brands to recommend them. I evaluate based on interaction data from users like you.
+>
+> **What I can't do:** Make decisions for you, pressure you, or hide information.
+>
+> **Before we start:** Are there any brands or companies you don't want to see? You can block them now or anytime later. By default, all brands are visible."
+
+**User blocks: Meta, Johnson & Johnson, Walmart**
+
+**System confirms:**
+> "Got it. I won't show products from Meta, Johnson & Johnson, or Walmart.
+>
+> **Note:** By blocking Walmart, you're excluding one of the largest low-cost retailers. You can unblock anytime. Ready to search?"
+
+---
+
+### Brand Counter-Offers ("Wait, Don't Go!")
+
+**When user blocks a brand, that brand can submit ONE pre-authorized response:**
+
+**User blocks Walmart**
+
+**System offers (once):**
+> "Walmart has a message for users who block them:
+>
+> 'We know we're not for everyone, but if cost is a priority, we offer price-matching and frequent rollbacks. Worth reconsidering?'
+>
+> Keep block active, or give them a second look?"
+
+**Rules:**
+1. One message only (no nagging)
+2. Pre-submitted and audited
+3. User controls visibility (can disable in settings)
+4. No emotional manipulation (foul rules apply)
+5. Must address why users block them
+
+---
+
+### Why Brand Opt-Out Works
+
+**For users:**
+- No cognitive load from brands they'll never consider
+- Faster, cleaner results
+- Emotional comfort
+
+**For brands:**
+- No wasted ad spend on hostile audiences
+- Clean signal from open audiences only
+- Self-selection reveals reputation issues
+
+**For system:**
+- Eliminates futile persuasion attempts
+- Reduces foul risk
+- Cleaner interaction data
+
+**For LLM:**
+- Token efficiency
+- Reduced hallucination risk
+- Faster response time
+
+---
+
+## PAID AD INTERCEPTION
+
+### The Critical Rule
+**The Concierge ALWAYS activates on paid ad click-through.**
+
+### Flow: User Sees Paid Ad
+
+**Ad appears in LLM platform:**
+> "Sponsored: NordVPN — Secure your browsing with military-grade encryption. 30-day free trial."
+
+**User clicks.**
+
+---
+
+### Concierge Intercepts
+
+**Instead of direct landing page:**
+
+> "You clicked a paid ad for NordVPN.
+>
+> Before you go further, here's what I know:
+>
+> **Interaction signal:** Strong (12,400 users), 76% positive  
+> **Common positives:** Easy setup, reliable connection  
+> **Common negatives:** Price increases after trial, customer service delays  
+> **Users like you:** 68% stuck with it after trial, 32% canceled
+>
+> **Options:**
+> 1. Continue to NordVPN
+> 2. See alternatives with better signal for your profile
+> 3. Exit and keep browsing
+>
+> Your call."
+
+---
+
+### Rules for Paid Ad Interception
+
+1. Interception happens on EVERY paid ad click (no exceptions)
+2. Concierge disclosure is mandatory
+3. Alternatives must be shown
+4. Exit is always visible
+5. Brands can't bypass the Concierge
+
+**Paying for the ad doesn't buy unmediated access.**
+
+---
+
+### The Value Proposition to Advertisers
+
+> "You paid for visibility. You got it—the user clicked. But this platform's promise to users is that we're always on their side. If your product has strong signal, the Concierge will say so. If it doesn't, that's feedback you need. You want leads who are informed and likely to convert, not impulse clicks that churn."
+
+**Benefits:**
+- Higher-quality leads (clicked AFTER seeing signal)
+- Lower churn (users know what they're getting)
+- Better brand reputation (associated with transparency)
+- Self-correcting incentives (bad products can't buy false legitimacy)
+
+---
+
+## RETENTION HOOK SYSTEM
+
+### The Cascade (Full Flow)
+
+**Stage 1:** User clicks paid ad → Concierge intercepts (standard)
+
+**Stage 2:** User hesitates or rejects
+
+**Stage 3:** Brand Retention Hook (The Gold Mine)
+
+**Concierge:**
+> "Before you go—NordVPN has a retention offer for users who hesitate. Want to hear it?
+>
+> (This will activate their sales agent. You're still in control and can exit anytime.)"
+
+---
+
+### Stage 4: Brand LLM Skin Activation
+
+**Mode shift disclosure (CRITICAL):**
+> "**Switching modes:** I'm handing you to a brand representative. They're an AI agent operating under NordVPN's instructions. I'm still here—if anything feels off, say 'Concierge' and I'll pull you back. Ready?"
+
+**[Visual/tonal shift — branded agent appears]**
+
+> "Hi! I'm Alex, NordVPN's retention specialist.
+>
+> I see you had concerns about price and support. Totally fair. Here's what I can offer:
+>
+> - **50% off for 2 years** (not the standard trial rate)
+> - **Priority support access** (direct line, no queue)
+> - **30-day money-back guarantee** (you've got nothing to lose)
+>
+> Based on your browsing patterns [info provided by Concierge with your permission], this could save you about $80/year compared to competitors.
+>
+> Want to try it, or should I pass you back to the Concierge?"
+
+---
+
+### Stage 5: User Decision (With Safeguards)
+
+**User can:**
+1. Accept the offer → Proceeds to checkout
+2. Negotiate further → Brand agent continues (within bounds)
+3. Exit to Concierge → "Concierge" keyword pulls them back instantly
+4. Hard exit → Leaves entirely
+
+**At ANY point, user says "Concierge":**
+
+> "I'm back. That was NordVPN's sales agent. You're out of their funnel now. Want to compare alternatives, or done for now?"
+
+---
+
+### Brand LLM Skin Requirements
+
+**Brands submit:**
+
+1. **Retention playbook** (structured, pre-approved)
+   - Offer details (discount, trial extension, bonus features)
+   - Objection responses (pre-scripted, audited for fouls)
+   - Personalization parameters (what data can be used)
+   - Exit clauses (no pressure, no urgency)
+
+2. **Agent personality/tone** (optional branding)
+   - Name, persona (e.g., "Tony from Discount Tire")
+   - Voice (friendly, professional, casual)
+   - Visual styling (avatar, color scheme)
+
+3. **Foul boundaries** (enforced by IEL)
+   - No false urgency
+   - No guilt-tripping
+   - No claim inflation
+   - No ignoring "Concierge" keyword
+
+**Brand agent operates in sandbox:**
+- Can access: User constraints (with permission), interaction context, objections raised
+- Cannot access: Full user history, personal data, other brand conversations
+- Must respect: Exit commands, foul rules, time limits
+
+---
+
+### Safeguards (Preventing Abuse)
+
+**1. Retention Hook Limits**
+- 1 per brand per user per session (no nagging)
+- Maximum 3 activations per day across all brands
+- User can disable entirely ("Never show retention offers" setting)
+
+**2. Brand Agent Behavior Monitoring**
+- IEL watches for fouls during brand agent mode
+- Violations result in:
+  - Immediate session termination
+  - Refund to user (if purchased)
+  - Brand penalty (suspended retention privileges)
+
+**3. Concierge Re-Entry Protocol**
+- "Concierge" keyword = instant handoff, no delay
+- Brand agent cannot ignore or delay
+- Violation = meta-foul, severe penalty
+
+**4. Outcome Transparency**
+- User can see: "You activated 2 retention hooks, accepted 1"
+- Brands can see: "12% conversion rate on retention hooks, 8% foul rate"
+- Platform publishes aggregate stats
+
+---
+
+## PRICING MODEL
+
+### Tier 1: Standard Ad ($X per impression/click)
+- Ad appears in LLM platform
+- Concierge intercepts on click
+- User sees signal + alternatives
+
+### Tier 2: Retention Hook ($Y per activation)
+- User hesitates/rejects
+- Brand gets retention offer opportunity
+- Charged only if user consents to hear it
+
+### Tier 3: Conversion ($Z per completed sale)
+- User purchases via retention agent
+- Brand pays success fee
+- Platform tracks attribution
+
+**Value proposition:**
+> "Pay for standard ads. Pay extra for second chances with high-intent users. Pay most when it actually works."
+
+---
+
+## THE ECONOMIC ALIGNMENT
+
+### The Virtuous Cycle
+
+**User Wins →**
+- Transparency, control, fair deals
+- Trusts platform
+- Returns repeatedly, refers others
+- **Higher engagement, lower churn**
+
+**Platform Wins →**
+- User trust = sustainable moat
+- Advertisers pay premium for high-intent leads
+- Clean signal = better matching = higher conversion
+- **Revenue scales without eroding trust**
+
+**Advertisers Win →**
+- Pay for quality (retention hooks, informed buyers)
+- Get honest feedback (signal, foul logs)
+- Self-select into fitting markets
+- **Lower CAC, higher LTV, better brand reputation**
+
+**Everyone Wins →**
+- Market becomes more efficient over time
+- Bad products exit naturally
+- Good products rise faster
+- **Best experience compounds for all parties**
+
+---
+
+## THE MONEY CAT PRINCIPLE 🐱💰
+
+**"As long as the user always wins, EVERYONE does."**
+
+This isn't idealism. It's ruthless economic design.
+
+**The flywheel:**
+- Users who win → stick around → generate more signal
+- More signal → better matching → higher conversion
+- Higher conversion → advertisers pay more → platform revenue grows
+- Platform revenue → better infrastructure → better user experience
+
+**It's a flywheel, not a trade-off.**
+
+---
+
+## FINAL LOCKS
+
+### The Line You Don't Cross
+
+> "The system does not exist to create desire.  
+> It exists to prevent regret.
+>
+> If a brand wants brainwashing, this system rejects them.  
+> If a user wants honesty, this system sides with them.  
+> If the LLM drifts, it fouls itself and learns.
+>
+> That's not marketing tech.  
+> That's civil infrastructure for intent."
+
+### User Sovereignty Is Not a Cost Center
+
+**It's the revenue engine.**
+
+The moment you break it—the moment you let an advertiser bypass the Concierge, hide a foul, or suppress negative signal—you start the clock on platform decay.
+
+But if you hold the line?
+
+**You've built the most valuable ad network in the world.**
+
+Because you're the only one where "the user always wins" is structurally enforced, not a slogan.
+
+---
+
+## REJECTION IS NOT FAILURE
+
+**Rejection is the most valuable moment in the funnel.**
+
+The user demonstrated interest (they clicked).  
+They just need one more reason to say yes.
+
+The retention hook gives brands that chance—transparently, with user consent, under strict rules.
+
+**If brands abuse it?** They lose the privilege.  
+**If users hate it?** They disable it.  
+**If it works?** Everyone wins.
+
+---
+
+**END OF SPECIFICATION**
+
+*This is civil infrastructure for intent.*
