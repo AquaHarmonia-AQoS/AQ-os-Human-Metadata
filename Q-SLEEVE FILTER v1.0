@@ -1,0 +1,136 @@
+Q-SLEEVE FILTER v1.0
+Purpose: Distinguish metaphorically coherent narratives from operational physical models
+Ethical rule: Do not invalidate — probe until constraints appear
+
+----------------------------------------
+Q0. DOMAIN DECLARATION
+----------------------------------------
+• What domain is this claiming to operate in?
+  ☐ Metaphor / Philosophy
+  ☐ Conceptual Framework
+  ☐ Mathematical Physics
+  ☐ Testable Cosmology
+
+→ If Mathematical Physics or Testable Cosmology is selected, proceed to Q1.
+
+----------------------------------------
+Q1. STATE VARIABLES
+----------------------------------------
+• What are the fundamental state variables?
+  (e.g. metric g_{μν}, scale factor a(t), density ρ, pressure p)
+
+• Where are they defined (coordinates, dimensions, units)?
+
+→ If variables are named only metaphorically (e.g. “core,” “engine,” “layers”),
+   flag as PRE-OPERATIONAL and continue probing.
+
+----------------------------------------
+Q2. GOVERNING EQUATIONS
+----------------------------------------
+• What equations govern the evolution of the system?
+• Are they differential equations?
+• What known equations are modified or replaced?
+
+Ask explicitly:
+> “Which equations would I integrate to reproduce your results?”
+
+→ If prose substitutes for equations, remain neutral and proceed.
+
+----------------------------------------
+Q3. METRIC & GEOMETRY
+----------------------------------------
+• What spacetime metric is assumed?
+  (FLRW? Modified FLRW? Something else?)
+
+• How does curvature enter the dynamics?
+• What stress-energy tensor sources it?
+
+Key check:
+> Does geometry replace dynamics, or describe dynamics?
+
+----------------------------------------
+Q4. LIMITS & RECOVERY
+----------------------------------------
+• In what limit does this reduce to ΛCDM or GR?
+• What happens at:
+  – early times (BBN)
+  – recombination (CMB)
+  – late times (structure formation)
+
+Ask:
+> “What known results does your model recover exactly?”
+
+----------------------------------------
+Q5. OBSERVABLE PIPELINES
+----------------------------------------
+For each claimed resolution, ask:
+
+• What observable is predicted?
+• What dataset tests it?
+• What deviation (sign + magnitude) should appear?
+
+Datasets:
+  ☐ CMB (TT, TE, EE)
+  ☐ BAO
+  ☐ Weak lensing
+  ☐ Galaxy clustering
+  ☐ Neutrino flux
+  ☐ Supernova distances
+
+----------------------------------------
+Q6. FALSIFIABILITY
+----------------------------------------
+• What observation would rule this out?
+• Has that observation already been made?
+
+Critical question:
+> “What would convince you this model is wrong?”
+
+----------------------------------------
+Q7. COMPUTATION
+----------------------------------------
+• Are there simulations?
+• Is there code?
+• Even a toy model?
+
+Ask gently:
+> “Is there a numerical implementation, even exploratory?”
+
+----------------------------------------
+Q8. PARAMETER ECONOMY
+----------------------------------------
+• How many free parameters?
+• Are they fitted post-hoc?
+• Are any numerological constants used?
+
+Check:
+> Are numbers derived, or noticed?
+
+----------------------------------------
+Q9. CLAIM CLASSIFICATION
+----------------------------------------
+Classify each claim as:
+  ☐ Derived
+  ☐ Assumed
+  ☐ Reinterpreted
+  ☐ Metaphorical
+
+No rejection — only labeling.
+
+----------------------------------------
+Q10. CURRENT STATUS
+----------------------------------------
+Based on answers, classify the work as:
+  ☐ Operational physics
+  ☐ Pre-formal hypothesis
+  ☐ Conceptual / heuristic model
+  ☐ Mythic cosmology (non-scientific but coherent)
+
+End state is descriptive, not adversarial.
+
+----------------------------------------
+ETHICAL TERMINATION CONDITION
+----------------------------------------
+If repeated probing yields no equations, observables, or falsifiers:
+→ Conclude: “Metaphor has not yet collapsed into mechanism.”
+→ Do not argue further.
